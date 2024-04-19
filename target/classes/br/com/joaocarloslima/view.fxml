@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="550.0" prefWidth="812.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.joaocarloslima.Controller">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Análise">
+            <items>
+              <MenuItem fx:id="menuQ1" mnemonicParsing="false" onAction="#responderQ1" text="Total de elefantes avistados pelo Bob em Fevereiro" />
+                  <MenuItem fx:id="menuQ2" mnemonicParsing="false" onAction="#responderQ2" text="Total de animais avistados pela Ana no primeiro trimestre" />
+                  <MenuItem fx:id="menuQ3" mnemonicParsing="false" onAction="#responderQ3" text="Total de macacos e elefantes avistados pela Ana em Julho" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox alignment="CENTER" prefHeight="128.0" prefWidth="772.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="185.0" prefWidth="148.0" spacing="10.0">
+               <children>
+                  <Label fx:id="lblElefante" alignment="CENTER" prefHeight="79.0" prefWidth="102.0" text="0" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Impact" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label text="Elefantes">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="185.0" prefWidth="148.0" spacing="10.0">
+               <children>
+                  <Label fx:id="lblMacaco" alignment="CENTER" prefHeight="79.0" prefWidth="117.0" text="0" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Impact" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label text="Macaco">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="158.0" layoutY="10.0" prefHeight="185.0" prefWidth="148.0" spacing="10.0">
+               <children>
+                  <Label fx:id="lblGirafa" alignment="CENTER" prefHeight="79.0" prefWidth="108.0" text="0" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Impact" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label text="Girafas">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="306.0" layoutY="10.0" prefHeight="185.0" prefWidth="148.0" spacing="10.0">
+               <children>
+                  <Label fx:id="lblAna" alignment="CENTER" prefHeight="79.0" prefWidth="134.0" text="0" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Impact" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label text="Ana">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutX="454.0" layoutY="10.0" prefHeight="185.0" prefWidth="148.0" spacing="10.0">
+               <children>
+                  <Label fx:id="lblBob" alignment="CENTER" prefHeight="79.0" prefWidth="128.0" text="0" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Impact" size="48.0" />
+                     </font>
+                  </Label>
+                  <Label text="Bob">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="49.0" prefWidth="772.0" spacing="10.0">
+         <children>
+            <TextField fx:id="txtAnimal" onAction="#filtrarPorAnimal" promptText="filtar por animal" />
+            <TextField fx:id="txtPesquisador" layoutX="322.0" layoutY="22.0" onAction="#filtrarPorPesquisador" promptText="filtar por pesquisador" />
+            <TextField fx:id="txtMes" layoutX="401.0" layoutY="22.0" onAction="#filtrarPorMes" promptText="filtar por mês" />
+            <Button fx:id="btnLimpar" mnemonicParsing="false" onAction="#limparFiltros" text="limpar" />
+         </children>
+      </HBox>
+      <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="colMes" prefWidth="75.0" text="Mês" />
+          <TableColumn fx:id="colAnimal" prefWidth="266.0" text="Animal" />
+            <TableColumn fx:id="colQuantidade" prefWidth="78.0" text="Qtde" />
+            <TableColumn fx:id="colPesquisador" prefWidth="176.0" text="Pesquisador" />
+        </columns>
+         <VBox.margin>
+            <Insets left="20.0" right="20.0" />
+         </VBox.margin>
+      </TableView>
+      <Label fx:id="lblStatus" text="Mostrando X registros">
+         <VBox.margin>
+            <Insets bottom="20.0" right="20.0" />
+         </VBox.margin>
+      </Label>
+   </children>
+</VBox>
